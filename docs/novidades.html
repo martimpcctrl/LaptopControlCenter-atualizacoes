@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novidades - Laptop Control Center</title>
+<meta name="description" content="O que mudou em cada versão do Laptop Control Center.">
+<link rel="icon" href="icone.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo-dentro">
+<a class="marca" href="index.html"><img src="icone.png" alt="">Laptop Control Center</a>
+<nav aria-label="Páginas do site"><ul><li><a href="index.html">Início</a></li><li><a href="novidades.html" aria-current="page">Novidades</a></li><li><a href="manual/pt.html">Manual</a></li><li><a href="privacidade.html">Privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="licenca.html">Licença</a></li><li><a href="creditos.html">Créditos</a></li></ul></nav>
+</div></header>
+<main id="conteudo" tabindex="-1">
+
+<h1>Novidades</h1>
+<p class="sub">O que mudou em cada versão, lido direto das versões publicadas.</p>
+<p id="status" role="status" aria-live="polite">Carregando as novidades.</p>
+<div id="versoes"></div>
+<p><a href="https://github.com/martimpcctrl/LaptopControlCenter-atualizacoes/releases">Ver as versões no GitHub</a></p>
+
+</main>
+<footer class="rodape"><div>Laptop Control Center, criado por Martim Alves de Souto Neto. Gratuito e de código aberto, licença MIT.
+<a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de uso</a> · <a href="licenca.html">Licença</a> · <a href="creditos.html">Créditos</a></div></footer>
+<script>
+const alvo=document.getElementById('versoes'),status=document.getElementById('status');
+function texto(t){const p=document.createElement('p');p.className='notas';p.textContent=t;return p}
+fetch('https://api.github.com/repos/martimpcctrl/LaptopControlCenter-atualizacoes/releases',{headers:{'Accept':'application/vnd.github+json'}})
+ .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+ .then(lista=>{
+   alvo.textContent='';
+   lista.filter(v=>!v.draft).forEach(v=>{
+     const s=document.createElement('section');s.className='versao';
+     const h=document.createElement('h2');h.textContent=v.name||v.tag_name;s.appendChild(h);
+     const d=document.createElement('p');d.className='data';
+     d.textContent='Publicada em '+new Date(v.published_at).toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+     s.appendChild(d);
+     s.appendChild(texto((v.body||'Sem notas.').trim()));
+     alvo.appendChild(s);
+   });
+   status.textContent=lista.length+' versões.';
+ })
+ .catch(()=>{status.textContent='Não deu para carregar as novidades agora. Veja direto no GitHub.';});
+</script>
+</body>
+</html>

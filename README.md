@@ -2,6 +2,8 @@
 
 Instaladores do **Laptop Control Center**: monitor, testes de desempenho, limpeza e controles do notebook, feito para quem usa leitor de tela (NVDA, JAWS, Narrador). Tudo o que importa é falado, e só usa controles comuns do Windows.
 
+Site: https://martimpcctrl.github.io/LaptopControlCenter-atualizacoes/
+
 ## Baixar
 
 Vá em [Releases](../../releases/latest) e baixe o arquivo `LaptopControlCenter-...-instalador.exe`. Ele instala só para o seu usuário, sem pedir administrador. Depois o próprio programa avisa quando sai versão nova.

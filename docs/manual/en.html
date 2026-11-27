@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laptop Control Center Manual</title>
+<style>
+:root{--fundo:#1b1815;--cartao:#24201a;--linha:#423a2f;--texto:#ede6da;--fraco:#a89a86;--ouro:#c9a24b}
+@media (prefers-color-scheme: light){:root{--fundo:#faf7f2;--cartao:#ffffff;--linha:#e2d9cb;--texto:#1f1a14;--fraco:#5e5446;--ouro:#8a6a1f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:"Segoe UI",system-ui,sans-serif;font-size:18px;line-height:1.6}
+.pular{position:absolute;left:-9999px}.pular:focus{left:16px;top:16px;background:var(--ouro);color:#000;padding:8px 12px;z-index:9}
+header,main{max-width:860px;margin:0 auto;padding:16px}
+h1{color:var(--ouro);font-size:1.9rem;margin:24px 0 4px}
+h2{color:var(--ouro);font-size:1.3rem;margin:0 0 8px}
+.versao{color:var(--fraco);margin:0 0 16px}
+.busca{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:14px;margin-bottom:20px}
+.busca label{display:block;font-weight:600;margin-bottom:6px}
+.busca input{width:100%;font-size:1.05rem;padding:10px;border-radius:8px;border:1px solid var(--linha);background:var(--fundo);color:var(--texto)}
+.busca p{color:var(--fraco);margin:6px 0 0;font-size:.95rem}
+.status{margin-top:8px;font-weight:600}
+nav ul{columns:2;padding-left:20px}
+section{background:var(--cartao);border:1px solid var(--linha);border-radius:10px;padding:16px;margin-bottom:14px}
+section[hidden]{display:none}
+table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--linha);vertical-align:top}
+th{color:var(--fraco)}
+a{color:var(--ouro)}
+mark{background:var(--ouro);color:#000;border-radius:3px}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:2px}
+@media (max-width:600px){nav ul{columns:1}}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Skip to content</a>
+<header><p><a href="../index.html">Back to the website</a></p>
+<h1>Laptop Control Center Manual</h1>
+<p class="versao">Version 1.3.0</p>
+<div class="busca" role="search">
+<label for="busca">Search the manual</label>
+<input id="busca" type="search" autocomplete="off" aria-describedby="dica">
+<p id="dica">Type a word, for example battery, brightness or shortcut.</p>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+</div>
+<nav aria-label="Contents"><h2>Contents</h2><ul><li data-alvo="comecar"><a href="#comecar">Getting started</a></li><li data-alvo="atalhos"><a href="#atalhos">Shortcuts from any program</a></li><li data-alvo="visao"><a href="#visao">Overview</a></li><li data-alvo="controles"><a href="#controles">Controls</a></li><li data-alvo="bateria"><a href="#bateria">Battery charge</a></li><li data-alvo="ferramentas"><a href="#ferramentas">Tools</a></li><li data-alvo="testes"><a href="#testes">Tests</a></li><li data-alvo="limpeza"><a href="#limpeza">Cleanup</a></li><li data-alvo="opcoes"><a href="#opcoes">Shortcuts and options</a></li><li data-alvo="avisos"><a href="#avisos">Sounds and alerts</a></li><li data-alvo="portatil"><a href="#portatil">Portable version</a></li></ul></nav>
+</header>
+<main id="conteudo" tabindex="-1">
+<section id="comecar" aria-labelledby="t-comecar"><h2 id="t-comecar">Getting started</h2><p>Laptop Control Center stays near the Windows clock. Closing the window only hides the program; to exit, open the menu of the icon near the clock (right click or the applications key) and choose Exit.</p><p>The shortcuts work from any program, even with the window hidden. In the window, F1 opens this manual, F5 refreshes the readings, Escape hides the window and Control Tab moves between tabs.</p><p>The window menu bar has Program, Settings and Help. Alt opens the menu bar.</p></section>
+<section id="atalhos" aria-labelledby="t-atalhos"><h2 id="t-atalhos">Shortcuts from any program</h2><table><thead><tr><th scope="col">Shortcut</th><th scope="col">What it does</th></tr></thead><tbody><tr><td>Control + Alt + M</td><td>changes the performance mode (silent, balanced, performance)</td></tr><tr><td>Control + Alt + T</td><td>says the processor usage and temperature and the memory</td></tr><tr><td>Control + Alt + B</td><td>says the battery</td></tr><tr><td>Control + Alt + L</td><td>changes the keyboard light</td></tr><tr><td>Control + Alt + J</td><td>shows or hides the Laptop Control Center window</td></tr><tr><td>Control + Alt + Page Up</td><td>increases the screen brightness</td></tr><tr><td>Control + Alt + Page Down</td><td>decreases the screen brightness</td></tr><tr><td>Control + Alt + W</td><td>says the Wi-Fi network and signal</td></tr><tr><td>Control + Alt + K</td><td>turns the touchpad on or off</td></tr><tr><td>Control + Alt + O</td><td>says what is slowing the computer down</td></tr><tr><td>Control + Alt + F</td><td>turns Fn Lock on or off (F1 to F12 direct or media)</td></tr></tbody></table></section>
+<section id="visao" aria-labelledby="t-visao"><h2 id="t-visao">Overview</h2><p>A list with all the computer readings, one per line: model, processor, usage, temperature, fan, memory, battery, brightness, power mode, disks, network and how long the computer has been on. Use the arrows to read and F5 to refresh.</p><p>The Programs using the most memory button says the eight that use the most memory.</p></section>
+<section id="controles" aria-labelledby="t-controles"><h2 id="t-controles">Controls</h2><p>Performance mode: silent, balanced or performance. It works on any laptop through the Windows power mode; on ASUS laptops it also changes the laptop&#x27;s own mode.</p><p>Screen brightness: increase and decrease, in steps of 10 percent.</p><p>Fn Lock (on ASUS laptops that have it): on, F1 to F12 work directly without pressing Fn, which helps with screen reader shortcuts; off, they go back to being media keys. Control Alt F turns it on and off from any program.</p><p>Battery charge and keyboard light depend on the brand. ASUS (limit of 60, 80 or 100 percent, and 4 light levels), Lenovo (conservation, normal or fast charge, and 3 light levels), Dell and HP (BIOS options, Windows asks for permission) and Acer (health mode at 80 percent, Windows asks for permission). The tab says what works on your laptop.</p></section>
+<section id="bateria" aria-labelledby="t-bateria"><h2 id="t-bateria">Battery charge</h2><p>Limiting the charge, for example to 80 percent, makes the battery last more years.</p><p>The limit only makes the battery stop charging when it reaches it. If it is already above, it does not discharge while plugged in: it waits until you use it down.</p><p>When the battery reaches the limit and stops charging, the program tells you that you can unplug it. While plugged in, the battery shortcut says how long until it is full.</p><p>Use the full charge before a trip.</p></section>
+<section id="ferramentas" aria-labelledby="t-ferramentas"><h2 id="t-ferramentas">Tools</h2><p>Battery health: how much it still holds compared with the factory capacity, from the Windows report itself.</p><p>Wi-Fi: the network name and signal strength. Bluetooth and touchpad: turn on and off.</p><p>Internet test: download speed and response time, in about 15 seconds.</p><p>Disk health: whether the SSD or hard drive is healthy or has a warning.</p><p>What is slowing it down: the list of the heaviest programs right now. Delete, or the Close the selected program button, closes the chosen one. Windows and the screen reader are protected.</p><p>Full report: a text file in Documents with all readings, the battery, disks, Wi-Fi, the heaviest programs and the ones that start with Windows. Good to send to a technician.</p></section>
+<section id="testes" aria-labelledby="t-testes"><h2 id="t-testes">Tests</h2><p>Processor (one core and all), memory and disk, compared with the previous test.</p><p>Stress test: all cores at 100 percent for the chosen minutes. It stops by itself if the temperature goes over the limit, and says so.</p></section>
+<section id="limpeza" aria-labelledby="t-limpeza"><h2 id="t-limpeza">Cleanup</h2><p>See how much can be cleaned and clean temporary files older than one day (files in use are kept).</p><p>Free up memory: asks programs to give back the memory they are not using.</p><p>Programs that start with Windows: Space turns them on or off. It is the same control as Task Manager, so you can undo it there.</p></section>
+<section id="opcoes" aria-labelledby="t-opcoes"><h2 id="t-opcoes">Shortcuts and options</h2><p>Change the key of each shortcut: choose the action, the key and press Change the key. The program warns if the key is already in use.</p><p>Sounds, start hidden, start with Windows, language (Portuguese, English or Spanish), check for updates and About.</p></section>
+<section id="avisos" aria-labelledby="t-avisos"><h2 id="t-avisos">Sounds and alerts</h2><p>A sound and speech when the charger is plugged in or unplugged, when the battery reaches the limit, when it drops below 20 percent unplugged and when the processor goes over 85 degrees.</p><p>A sound for each performance mode, for the keyboard light (higher pitch for brighter) and for brightness. Sounds can be turned off in Shortcuts and options.</p></section>
+<section id="portatil" aria-labelledby="t-portatil"><h2 id="t-portatil">Portable version</h2><p>In the installer you can choose Portable: the program goes to a folder or USB drive, with no shortcuts and no uninstaller. Settings are kept in the dados folder, next to the program.</p><p>When a new version comes out, the portable version tells you and opens the download page.</p></section>
+</main>
+<script type="application/json" id="textos">{"achou": "{n} sections found.", "achou1": "1 section found.", "nada": "Nothing found. Try another word.", "todas": "Showing all sections."}</script>
+<script>
+const campo=document.getElementById('busca'),status=document.getElementById('status'),secoes=[...document.querySelectorAll('main section')];
+const T=JSON.parse(document.getElementById('textos').textContent);
+function normal(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+let espera;
+campo.addEventListener('input',()=>{clearTimeout(espera);espera=setTimeout(filtrar,350)});
+function filtrar(){
+  const q=normal(campo.value.trim());let n=0;
+  secoes.forEach(s=>{const ok=!q||normal(s.textContent).includes(q);s.hidden=!ok;if(ok)n++});
+  document.querySelectorAll('nav li').forEach(li=>{const alvo=document.getElementById(li.dataset.alvo);li.hidden=alvo&&alvo.hidden});
+  status.textContent=!q?T.todas:(n===0?T.nada:(n===1?T.achou1:T.achou.replace('{n}',n)));
+}
+</script>
+</body>
+</html>

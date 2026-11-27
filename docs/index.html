@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início - Laptop Control Center</title>
+<meta name="description" content="Painel do notebook para quem usa leitor de tela: monitor, controles da bateria e do teclado, testes e limpeza.">
+<link rel="icon" href="icone.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo-dentro">
+<a class="marca" href="index.html"><img src="icone.png" alt="">Laptop Control Center</a>
+<nav aria-label="Páginas do site"><ul><li><a href="index.html" aria-current="page">Início</a></li><li><a href="novidades.html">Novidades</a></li><li><a href="manual/pt.html">Manual</a></li><li><a href="privacidade.html">Privacidade</a></li><li><a href="termos.html">Termos de uso</a></li><li><a href="licenca.html">Licença</a></li><li><a href="creditos.html">Créditos</a></li></ul></nav>
+</div></header>
+<main id="conteudo" tabindex="-1">
+
+<div class="heroi">
+<div>
+<h1>Laptop Control Center</h1>
+<p class="sub">O painel do notebook feito para quem usa leitor de tela. Monitor, controles, testes e limpeza num programa só, com tudo falado e atalhos que funcionam de qualquer programa.</p>
+<div class="botoes">
+<a class="botao" href="https://github.com/martimpcctrl/LaptopControlCenter-atualizacoes/releases/latest/download/LaptopControlCenter-instalador.exe">Baixar o instalador <span id="tam-inst"></span></a>
+<a class="botao secundario" href="https://github.com/martimpcctrl/LaptopControlCenter-atualizacoes/releases/latest/download/LaptopControlCenter-portatil.zip">Baixar a versão portátil <span id="tam-port"></span></a>
+</div>
+<p class="info" id="versao-atual">Sempre a versão mais nova.</p>
+<p class="info">Windows 10 ou 11, 64 bits. O instalador também oferece a opção portátil, para usar de uma pasta ou pen drive. Se o Windows disser que protegeu o computador, escolha Mais informações e depois Executar assim mesmo: o programa ainda não tem assinatura digital paga.</p>
+</div>
+<img src="icone.png" alt="Ícone do Laptop Control Center: um raio dourado com ondas de som">
+</div>
+
+<h2>Feito para NVDA, JAWS e Narrador</h2>
+<p>Só controles comuns do Windows, que o leitor de tela lê bem, e tudo o que importa é falado. O programa fica perto do relógio e responde a atalhos de qualquer programa, mesmo com a janela escondida. Português, inglês e espanhol.</p>
+
+<h2>O que ele faz</h2>
+<div class="grade">
+<div class="cartao"><h3>Monitor falado</h3><p>Temperatura e uso do processador, memória, bateria com tempo restante e quanto falta para encher, discos e rede. Control Alt T fala a temperatura, Control Alt B a bateria e Control Alt W o Wi-Fi.</p></div>
+<div class="cartao"><h3>Controles do notebook</h3><p>Modo de desempenho e brilho da tela em qualquer notebook. Conforme a marca, limite de carga da bateria, luz do teclado e Fn Lock: ASUS, Lenovo, Dell, HP e Acer.</p></div>
+<div class="cartao"><h3>Bateria que dura mais</h3><p>Limitar a carga em 80 por cento faz a bateria durar anos a mais. O programa avisa quando ela chega no limite, quando fica fraca e mostra a saúde dela comparada com a de fábrica.</p></div>
+<div class="cartao"><h3>Ferramentas</h3><p>Teste da internet, saúde dos discos, o que está deixando o computador lento (com opção de fechar o programa), Bluetooth, touchpad e um relatório completo para mandar a um técnico.</p></div>
+<div class="cartao"><h3>Testes e limpeza</h3><p>Benchmark de processador, memória e disco, teste de estresse que para sozinho se esquentar demais, limpeza de temporários e programas que abrem com o Windows.</p></div>
+<div class="cartao"><h3>Sons e avisos</h3><p>Som e fala quando o carregador é ligado ou desligado, a bateria enche ou fica fraca e o processador esquenta. Um som para cada modo e para a luz do teclado.</p></div>
+</div>
+
+<h2>Atalhos principais</h2>
+<table>
+<thead><tr><th scope="col">Atalho</th><th scope="col">O que faz</th></tr></thead>
+<tbody>
+<tr><td>Control Alt T</td><td>Fala o uso e a temperatura do processador e a memória</td></tr>
+<tr><td>Control Alt B</td><td>Fala a bateria</td></tr>
+<tr><td>Control Alt M</td><td>Troca o modo de desempenho</td></tr>
+<tr><td>Control Alt Page Up e Page Down</td><td>Aumentam e diminuem o brilho</td></tr>
+<tr><td>Control Alt F</td><td>Liga ou desliga o Fn Lock (ASUS)</td></tr>
+<tr><td>Control Alt J</td><td>Mostra ou esconde a janela</td></tr>
+</tbody>
+</table>
+<p>Todos os atalhos e o passo a passo estão no <a href="manual/pt.html">manual</a>, que também tem versão em <a href="manual/en.html" hreflang="en">inglês</a> e <a href="manual/es.html" hreflang="es">espanhol</a>.</p>
+
+</main>
+<footer class="rodape"><div>Laptop Control Center, criado por Martim Alves de Souto Neto. Gratuito e de código aberto, licença MIT.
+<a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de uso</a> · <a href="licenca.html">Licença</a> · <a href="creditos.html">Créditos</a></div></footer>
+<script>
+fetch('https://api.github.com/repos/martimpcctrl/LaptopControlCenter-atualizacoes/releases/latest',{headers:{'Accept':'application/vnd.github+json'}})
+ .then(r=>r.ok?r.json():null).then(v=>{
+   if(!v)return;
+   const tam=n=>{const a=(v.assets||[]).find(x=>x.name===n);return a?Math.round(a.size/1048576)+' MB':''};
+   document.getElementById('versao-atual').textContent='Versão '+v.tag_name.replace(/^v/,'')+', de '+new Date(v.published_at).toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'})+'.';
+   const i=tam('LaptopControlCenter-instalador.exe'),p=tam('LaptopControlCenter-portatil.zip');
+   if(i)document.getElementById('tam-inst').textContent='('+i+')';
+   if(p)document.getElementById('tam-port').textContent='('+p+')';
+ }).catch(()=>{});
+</script>
+</body>
+</html>
